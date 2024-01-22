@@ -30,6 +30,7 @@ namespace TestUnitaireTD21
 
 			Assert::AreEqual(expected, buffer.str());
 		}
+
 		TEST_METHOD(TestAdd)
 		{
 			Vector2 expected2 = { 10 , 0 };
@@ -39,6 +40,7 @@ namespace TestUnitaireTD21
 			Assert::AreEqual(expected2.y, result3);
 
 		}
+
 		TEST_METHOD(TestSubstract)
 		{
 			Vector2 expected3 = { 0 , 10 };
@@ -47,6 +49,7 @@ namespace TestUnitaireTD21
 			Assert::AreEqual(expected3.x, result4);
 			Assert::AreEqual(expected3.y, result5);
 		}
+
 		TEST_METHOD(TestMultiply)
 		{
 			Vector2 expected4 = { 25 , -25 };
@@ -55,6 +58,7 @@ namespace TestUnitaireTD21
 			Assert::AreEqual(expected4.x, result6);
 			Assert::AreEqual(expected4.y, result7);
 		}
+
 		TEST_METHOD(TestDivide)
 		{
 			Vector2 expected5 = { 1 , -1 };
@@ -63,18 +67,21 @@ namespace TestUnitaireTD21
 			Assert::AreEqual(expected5.x, result8);
 			Assert::AreEqual(expected5.y, result9);
 		}
+
 		TEST_METHOD(TestNormalize)
 		{
 			Vector2 expected6 = { 0.707107 , 0.707107 };
 			float result10 = Vector2().Normalize({ 8,8 }).x;
 			Assert::AreEqual(expected6.x, result10);
 		}
+
 		TEST_METHOD(TestNorme)
 		{
 			float expected7 = { 7.07107 };
 			float result11 = Vector2().GetNorme({ 5 , -5 });
 			Assert::AreEqual(expected7, result11);
 		}
+
 		TEST_METHOD(TestDistance)
 		{
 			float expected8 = { 10 };
@@ -83,6 +90,7 @@ namespace TestUnitaireTD21
 			Assert::AreEqual(expected8, result12);
 			Assert::AreEqual(expected8, result13);
 		}
+
 		TEST_METHOD(TestAngle)
 		{
 			float expected9 = { 1.5708 };
@@ -91,5 +99,6 @@ namespace TestUnitaireTD21
 			Assert::AreEqual(expected9, result14);
 			Assert::AreEqual(expected9, result15);
 		}
+
 	};
 }

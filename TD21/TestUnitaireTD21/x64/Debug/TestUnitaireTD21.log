@@ -1,6 +1,1 @@
-﻿  TestUnitaireTD21.cpp
-C:\Users\JBPIN\Documents\PROGRAMMATION\repos\TD21\TD21\TestUnitaireTD21\TestUnitaireTD21.cpp(68,1): warning C4305: 'argument' : troncation de 'double' à 'float'
-C:\Users\JBPIN\Documents\PROGRAMMATION\repos\TD21\TD21\TestUnitaireTD21\TestUnitaireTD21.cpp(74,1): warning C4305: 'initialisation' : troncation de 'double' à 'float'
-C:\Users\JBPIN\Documents\PROGRAMMATION\repos\TD21\TD21\TestUnitaireTD21\TestUnitaireTD21.cpp(88,1): warning C4305: 'initialisation' : troncation de 'double' à 'float'
-     Création de la bibliothèque C:\Users\JBPIN\Documents\PROGRAMMATION\repos\TD21\TD21\x64\Debug\TestUnitaireTD21.lib et de l'objet C:\Users\JBPIN\Documents\PROGRAMMATION\repos\TD21\TD21\x64\Debug\TestUnitaireTD21.exp
-  TestUnitaireTD21.vcxproj -> C:\Users\JBPIN\Documents\PROGRAMMATION\repos\TD21\TD21\x64\Debug\TestUnitaireTD21.dll
+﻿  TestUnitaireTD21.vcxproj -> C:\Users\JBPIN\Documents\PROGRAMMATION\repos\TD21\TD21\x64\Debug\TestUnitaireTD21.dll
