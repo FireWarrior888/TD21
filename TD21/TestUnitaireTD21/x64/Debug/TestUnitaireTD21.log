@@ -1,3 +1,7 @@
 ﻿  TestUnitaireTD21.cpp
-     Création de la bibliothèque C:\Users\j.pin\source\repos\TD21\x64\Debug\TestUnitaireTD21.lib et de l'objet C:\Users\j.pin\source\repos\TD21\x64\Debug\TestUnitaireTD21.exp
-  TestUnitaireTD21.vcxproj -> C:\Users\j.pin\source\repos\TD21\x64\Debug\TestUnitaireTD21.dll
+     Création de la bibliothèque C:\Users\j.pin\Documents\GitHub\TD21\TD21\x64\Debug\TestUnitaireTD21.lib et de l'objet C:\Users\j.pin\Documents\GitHub\TD21\TD21\x64\Debug\TestUnitaireTD21.exp
+TestUnitaireTD21.obj : error LNK2019: symbole externe non résolu "public: __cdecl Vector2::Vector2(void)" (??0Vector2@@QEAA@XZ) référencé dans la fonction "public: void __cdecl TestUnitaireTD21::TestUnitaireTD21::TestAdd(void)" (?TestAdd@TestUnitaireTD21@1@QEAAXXZ)
+TestUnitaireTD21.obj : error LNK2019: symbole externe non résolu "public: __cdecl Vector2::Vector2(float,float)" (??0Vector2@@QEAA@MM@Z) référencé dans la fonction "public: void __cdecl TestUnitaireTD21::TestUnitaireTD21::TestAdd(void)" (?TestAdd@TestUnitaireTD21@1@QEAAXXZ)
+TestUnitaireTD21.obj : error LNK2019: symbole externe non résolu "public: __cdecl Vector2::~Vector2(void)" (??1Vector2@@QEAA@XZ) référencé dans la fonction "public: void __cdecl TestUnitaireTD21::TestUnitaireTD21::TestAdd(void)" (?TestAdd@TestUnitaireTD21@1@QEAAXXZ)
+TestUnitaireTD21.obj : error LNK2019: symbole externe non résolu "public: class Vector2 __cdecl Vector2::AddVector2f(class Vector2,class Vector2)" (?AddVector2f@Vector2@@QEAA?AV1@V1@0@Z) référencé dans la fonction "public: void __cdecl TestUnitaireTD21::TestUnitaireTD21::TestAdd(void)" (?TestAdd@TestUnitaireTD21@1@QEAAXXZ)
+C:\Users\j.pin\Documents\GitHub\TD21\TD21\x64\Debug\TestUnitaireTD21.dll : fatal error LNK1120: 4 externes non résolus

@@ -9,7 +9,12 @@ namespace TestUnitaireTD21
 	TEST_CLASS(TestUnitaireTD21)
 	{
 	public:
-		
+
+		/*Vector2 a = { 5,-5 };
+		Vector2 b = { 5,5 };
+		float b2 = 5;
+		Vector2 v = { 8,8 };*/
+
 		TEST_METHOD(TestSource)
 		{
 			std::string expected = "Hello World!\n";
@@ -28,10 +33,13 @@ namespace TestUnitaireTD21
 		}
 		TEST_METHOD(TestAdd)
 		{
-			/*Vector2 expected2 = { 10 , 0 };
-			int result2 = main();
+			Vector2 expected2 = { 10 , 0 };
+			float result2 = Vector2().AddVector2f({ 5,-5 },{5,5}).x;
+			float result3 = Vector2().AddVector2f({ 5,-5 }, { 5,5 }).y;
+			Assert::AreEqual(expected2.x, result2);
+			Assert::AreEqual(expected2.y, result3);
 			
-			*/
+			
 		}
 		TEST_METHOD(TestSubstract)
 		{
