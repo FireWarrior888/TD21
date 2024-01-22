@@ -28,7 +28,10 @@ namespace TestUnitaireTD21
 		}
 		TEST_METHOD(TestAdd)
 		{
-
+			/*Vector2 expected2 = { 10 , 0 };
+			int result2 = main();
+			
+			*/
 		}
 		TEST_METHOD(TestSubstract)
 		{
@@ -51,6 +54,10 @@ namespace TestUnitaireTD21
 
 		}
 		TEST_METHOD(TestDistance)
+		{
+
+		}
+		TEST_METHOD(TestAngle)
 		{
 
 		}

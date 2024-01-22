@@ -5,21 +5,28 @@
 class Vector2
 {
 public:
-	float GetDistance(sf::Vector2f a, sf::Vector2f b);
+	float x;
+	float y;
 
-	sf::Vector2f AddVector2f(sf::Vector2f a, sf::Vector2f b);
+	Vector2();
+	Vector2(float _x, float _y);
+	~Vector2();
 
-	sf::Vector2f SubstractVector2f(sf::Vector2f a, sf::Vector2f b);
+	float GetDistance(Vector2 a, Vector2 b);
 
-	sf::Vector2f MultiplyVector2f(sf::Vector2f a, float b);
+	Vector2 AddVector2f(Vector2 a, Vector2 b);
 
-	sf::Vector2f DivideVector2f(sf::Vector2f a, float b);
+	Vector2 SubstractVector2f(Vector2 a, Vector2 b);
 
-	sf::Vector2f Normalize(sf::Vector2f v);
+	Vector2 MultiplyVector2f(Vector2 a, float b);
 
-	float GetNorme(sf::Vector2f a);
+	Vector2 DivideVector2f(Vector2 a, float b);
 
-	float GetSignedAngleBetween(sf::Vector2f a, sf::Vector2f b);
+	Vector2 Normalize(Vector2 v);
+
+	float GetNorme(Vector2 a);
+
+	float GetSignedAngleBetween(Vector2 a, Vector2 b);
 
 
 private:

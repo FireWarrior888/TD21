@@ -1,51 +1,63 @@
 #include "Vector2.h"
 
-float Vector2::GetDistance(sf::Vector2f a, sf::Vector2f b)
+Vector2::Vector2()
+{
+}
+
+Vector2::Vector2(float _x, float _y)
+{
+	x = _x;
+	y = _y;
+}
+
+Vector2::~Vector2()
+{
+}
+
+float Vector2::GetDistance(Vector2 a, Vector2 b)
 {
 	return sqrt((b.x - a.x) * (b.x - a.x) + (b.y - a.y) * (b.y - a.y));
 }
 
-sf::Vector2f Vector2::AddVector2f(sf::Vector2f a, sf::Vector2f b)
+Vector2 Vector2::AddVector2f(Vector2 a, Vector2 b)
 {
-	sf::Vector2f addVector2 = { a.x + b.x, a.y + b.y };
+	Vector2 addVector2 = { a.x + b.x, a.y + b.y };
 	return addVector2;
 }
 
-sf::Vector2f Vector2::SubstractVector2f(sf::Vector2f a, sf::Vector2f b)
+Vector2 Vector2::SubstractVector2f(Vector2 a, Vector2 b)
 {
-	sf::Vector2f substractVector2 = { b.x - a.x, b.y - a.y };
+	Vector2 substractVector2 = { b.x - a.x, b.y - a.y };
 	return substractVector2;
 }
 
-sf::Vector2f Vector2::MultiplyVector2f(sf::Vector2f a, float b)
+Vector2 Vector2::MultiplyVector2f(Vector2 a, float b)
 {
-	sf::Vector2f multiplyVector2 = { a.x * b, a.y * b };
+	Vector2 multiplyVector2 = { a.x * b, a.y * b };
 	return multiplyVector2;
 }
 
-sf::Vector2f Vector2::DivideVector2f(sf::Vector2f a, float b)
+Vector2 Vector2::DivideVector2f(Vector2 a, float b)
 {
-	sf::Vector2f divideVector2 = { a.x / b, a.y / b };
+	Vector2 divideVector2 = { a.x / b, a.y / b };
 	return divideVector2;
 }
 
-sf::Vector2f Vector2::Normalize(sf::Vector2f v)
+Vector2 Vector2::Normalize(Vector2 v)
 {
-	if (v == sf::Vector2f())
-		return sf::Vector2f();
-	else
+	if (GetNorme(v) != 0)
 		return DivideVector2f(v, GetNorme(v));
+	else 
+		return Vector2();
+	
 }
 
-float Vector2::GetNorme(sf::Vector2f a)
+float Vector2::GetNorme(Vector2 a)
 {
-	if (a == sf::Vector2f())
-		return 0.f;
-	else
-		return sqrt(a.x * a.x + a.y * a.y);
+	return sqrt(a.x * a.x + a.y * a.y);
 }
 
-float Vector2::GetSignedAngleBetween(sf::Vector2f a, sf::Vector2f b)
+float Vector2::GetSignedAngleBetween(Vector2 a, Vector2 b)
 {
 	return atan2f(a.x * b.y - a.y * b.x, a.x * b.x + a.y * b.y);
 }
