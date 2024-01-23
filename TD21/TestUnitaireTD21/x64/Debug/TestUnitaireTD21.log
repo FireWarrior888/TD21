@@ -1,1 +1,6 @@
-﻿  TestUnitaireTD21.vcxproj -> C:\Users\j.pin\Documents\GitHub\TD21\TD21\x64\Debug\TestUnitaireTD21.dll
+﻿  TestUnitaireTD21.cpp
+C:\Users\j.pin\Documents\GitHub\TD21\TD21\TestUnitaireTD21\TestUnitaireTD21.cpp(72,1): warning C4305: 'argument' : troncation de 'double' à 'float'
+C:\Users\j.pin\Documents\GitHub\TD21\TD21\TestUnitaireTD21\TestUnitaireTD21.cpp(80,1): warning C4305: 'initialisation' : troncation de 'double' à 'float'
+C:\Users\j.pin\Documents\GitHub\TD21\TD21\TestUnitaireTD21\TestUnitaireTD21.cpp(97,1): warning C4305: 'initialisation' : troncation de 'double' à 'float'
+C:\Users\j.pin\Documents\GitHub\TD21\TD21\TestUnitaireTD21\TestUnitaireTD21.cpp(114,1): warning C4267: '=' : conversion de 'size_t' en 'int', perte possible de données
+  TestUnitaireTD21.vcxproj -> C:\Users\j.pin\Documents\GitHub\TD21\TD21\x64\Debug\TestUnitaireTD21.dll

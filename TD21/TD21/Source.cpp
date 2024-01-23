@@ -2,40 +2,40 @@
 #include <vector>
 #include <exception>
 
-//class exception
-//{
-//public:
-//    exception() throw(){}
-//    virtual ~exception() throw();
-//
-//    virtual const char* what() const throw(); //sert a renvoyer des infos sur l'erreur
-//
-//};
-//
-//class erreur : public exception
-//{
-//public:
-//    erreur(int numero=0, std::string const& phrase="",int niveau=0) throw()
-//        :m_numero(numero),m_phrase(phrase),m_niveau(niveau)
-//    {}
-//    
-//    virtual const char* what() const throw()
-//    {
-//        return m_phrase.c_str();
-//    }
-//
-//    int getNiveau() const throw()
-//    {
-//        return m_niveau;
-//    }
-//
-//    virtual ~erreur() throw() {};
-//
-//private:
-//    int m_numero; //numero de l'erreur
-//    std::string m_phrase; //description de l'erreur
-//    int m_niveau; //niveau de l'erreur
-//};
+class exception
+{
+public:
+    exception() throw(){}
+    virtual ~exception() throw();
+
+    virtual const char* what() const throw(); //sert a renvoyer des infos sur l'erreur
+
+};
+
+class erreur : public exception
+{
+public:
+    erreur(int numero=0, std::string const& phrase="",int niveau=0) throw()
+        :m_numero(numero),m_phrase(phrase),m_niveau(niveau)
+    {}
+    
+    virtual const char* what() const throw()
+    {
+        return m_phrase.c_str();
+    }
+
+    int getNiveau() const throw()
+    {
+        return m_niveau;
+    }
+
+    virtual ~erreur() throw() {};
+
+private:
+    int m_numero; //numero de l'erreur
+    std::string m_phrase; //description de l'erreur
+    int m_niveau; //niveau de l'erreur
+};
 
 class Vector2
 {
@@ -75,12 +75,8 @@ int main()
     Vector2 b = { 5,5 };
     float b2 = 5;
     Vector2 v = { 8,8 };
+    float z = 0;
 
-    /*if (b2 == 0)
-    {
-        throw erreur(1, "Division par zero", 2);
-    }*/
-    
 
     Vector2 resultat1 = Vector2().AddVector2f(a, b);
     Vector2 resultat2 = Vector2().SubstractVector2f(a, b);
@@ -97,6 +93,26 @@ int main()
     std::cout << resultat2.x << ", " << resultat2.y << std::endl;
     std::cout << resultat3.x << ", " << resultat3.y << std::endl;
     std::cout << resultat4.x << ", " << resultat4.y << std::endl;
+
+    if (b2 == 0)
+    {
+        throw erreur(1, "Division par zero", 2);
+    }
+    else
+    {
+        std::cout << resultat4.x << ", " << resultat4.y << std::endl;
+    }
+
+    try
+    {
+        float b2 = 0;
+        Vector2().DivideVector2f(a, b2);
+    }
+    catch (const char* msg)
+    {
+        std::cout << msg << std::endl;
+    }
+
     std::cout << resultat5.x << ", " << resultat5.y << std::endl;
     std::cout << resultat6 << std::endl;
     std::cout << resultat7 << std::endl;
