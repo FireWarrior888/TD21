@@ -2,17 +2,7 @@
 #include <vector>
 #include <exception>
 
-class exception
-{
-public:
-    exception() throw(){}
-    virtual ~exception() throw();
-
-    virtual const char* what() const throw(); //sert a renvoyer des infos sur l'erreur
-
-};
-
-class erreur : public exception
+class erreur : public std::exception
 {
 public:
     erreur(int numero=0, std::string const& phrase="",int niveau=0) throw()
@@ -29,7 +19,7 @@ public:
         return m_niveau;
     }
 
-    virtual ~erreur() throw() {};
+   ~erreur(){};
 
 private:
     int m_numero; //numero de l'erreur
@@ -96,23 +86,17 @@ int main()
 
     if (b2 == 0)
     {
-        throw erreur(1, "Division par zero", 2);
+        try
+        {
+            throw erreur(1, "Division par zero", 2);
+            Vector2().DivideVector2f(a, b2);
+        }
+        catch (const char* msg)
+        {
+            std::cout << msg << std::endl;
+        }
     }
-    else
-    {
-        std::cout << resultat4.x << ", " << resultat4.y << std::endl;
-    }
-
-    try
-    {
-        float b2 = 0;
-        Vector2().DivideVector2f(a, b2);
-    }
-    catch (const char* msg)
-    {
-        std::cout << msg << std::endl;
-    }
-
+    
     std::cout << resultat5.x << ", " << resultat5.y << std::endl;
     std::cout << resultat6 << std::endl;
     std::cout << resultat7 << std::endl;

@@ -1,4 +1,2 @@
 ﻿  Source.cpp
-Source.obj : error LNK2019: symbole externe non résolu "public: virtual __cdecl exception::~exception(void)" (??1exception@@UEAA@XZ) référencé dans la fonction "int `public: __cdecl erreur::erreur(class dtor$0 const &)'::`1'::dtor$0" (?dtor$0@?0???0erreur@@QEAA@AEBV0@@Z@4HA)
-Source.obj : error LNK2001: symbole externe non résolu "public: virtual char const * __cdecl exception::what(void)const " (?what@exception@@UEBAPEBDXZ)
-C:\Users\j.pin\Documents\GitHub\TD21\TD21\x64\Debug\TD21.exe : fatal error LNK1120: 2 externes non résolus
+  TD21.vcxproj -> C:\Users\j.pin\Documents\GitHub\TD21\TD21\x64\Debug\TD21.exe
