@@ -18,7 +18,6 @@ public:
         return m_phrase.c_str();
     }
 
-
    ~erreur(){};
 
 private:

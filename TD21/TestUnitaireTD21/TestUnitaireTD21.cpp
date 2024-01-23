@@ -101,12 +101,6 @@ namespace TestUnitaireTD21
 			Assert::AreEqual(expected9, result14, tolerance);
 			Assert::AreEqual(expected9, result15, tolerance);
 		}
-
-		TEST_METHOD(TestBoucle)
-		{
-			
-		}
 		
-
 	};
 }
