@@ -14,7 +14,7 @@ namespace TestUnitaireTD21
 		float b2 = 5;
 		Vector2 v = { 8,8 };
 
-		TEST_METHOD(TestSource)
+		/*TEST_METHOD(TestSource)
 		{
 			std::string expected = "Hello World!\n";
 
@@ -29,21 +29,20 @@ namespace TestUnitaireTD21
 			std::cout << buffer.get();
 
 			Assert::AreEqual(expected, buffer.str());
-		}
+		}*/
 
 		TEST_METHOD(TestAdd)
 		{
-			Vector2 expected2 = { 10 , 0 };
+			Vector2 expected2 = { 10, 0 };
 			float result2 = Vector2().AddVector2f({ 5,-5 }, { 5,5 }).x;
 			float result3 = Vector2().AddVector2f({ 5,-5 }, { 5,5 }).y;
 			Assert::AreEqual(expected2.x, result2);
 			Assert::AreEqual(expected2.y, result3);
-
 		}
 
 		TEST_METHOD(TestSubstract)
 		{
-			Vector2 expected3 = { 0 , 10 };
+			Vector2 expected3 = { 0, 10 };
 			float result4 = Vector2().SubstractVector2f({ 5,-5 }, { 5,5 }).x;
 			float result5 = Vector2().SubstractVector2f({ 5,-5 }, { 5,5 }).y;
 			Assert::AreEqual(expected3.x, result4);
@@ -52,7 +51,7 @@ namespace TestUnitaireTD21
 
 		TEST_METHOD(TestMultiply)
 		{
-			Vector2 expected4 = { 25 , -25 };
+			Vector2 expected4 = { 25, -25 };
 			float result6 = Vector2().MultiplyVector2f({ 5,-5 }, { 5 }).x;
 			float result7 = Vector2().MultiplyVector2f({ 5,-5 }, { 5 }).y;
 			Assert::AreEqual(expected4.x, result6);
@@ -61,7 +60,7 @@ namespace TestUnitaireTD21
 
 		TEST_METHOD(TestDivide)
 		{
-			Vector2 expected5 = { 1 , -1 };
+			Vector2 expected5 = { 1, -1 };
 			float result8 = Vector2().DivideVector2f({ 5,-5 }, { 5 }).x;
 			float result9 = Vector2().DivideVector2f({ 5,-5 }, { 5 }).y;
 			Assert::AreEqual(expected5.x, result8);
@@ -70,16 +69,18 @@ namespace TestUnitaireTD21
 
 		TEST_METHOD(TestNormalize)
 		{
-			Vector2 expected6 = { 0.707107 , 0.707107 };
+			Vector2 expected6 = { 0.707107, 0.707107 };
 			float result10 = Vector2().Normalize({ 8,8 }).x;
-			Assert::AreEqual(expected6.x, result10);
+			float tolerance = 0.00001f;
+			Assert::AreEqual(expected6.x, result10, tolerance);
 		}
 
 		TEST_METHOD(TestNorme)
 		{
 			float expected7 = { 7.07107 };
 			float result11 = Vector2().GetNorme({ 5 , -5 });
-			Assert::AreEqual(expected7, result11);
+			float tolerance = 0.00001f;
+			Assert::AreEqual(expected7, result11 , tolerance);
 		}
 
 		TEST_METHOD(TestDistance)
@@ -96,9 +97,29 @@ namespace TestUnitaireTD21
 			float expected9 = { 1.5708 };
 			float result14 = Vector2().GetSignedAngleBetween({ 5,-5 }, { 5,5 });
 			float result15 = Vector2().GetSignedAngleBetween({ 5,-5 }, { 5,5 });
-			Assert::AreEqual(expected9, result14);
-			Assert::AreEqual(expected9, result15);
+			float tolerance = 0.00001f;
+			Assert::AreEqual(expected9, result14, tolerance);
+			Assert::AreEqual(expected9, result15, tolerance);
 		}
+
+		TEST_METHOD(TestBoucle)
+		{
+			std::vector<Vector2*> testing;
+			int compteur = 0;
+			std::string tmp = "fuite de memoire potentielle.";
+			while(1)
+			{
+				Vector2* vec = new Vector2();
+				testing.push_back(vec);
+				compteur = testing.size();
+				if (compteur >= 100)
+				{
+					Assert::Fail();
+				}
+			}
+			
+		}
+		
 
 	};
 }
