@@ -2,14 +2,15 @@
 #include <vector>
 #include <exception>
 #include <string>
+#include <cassert>
 
 class erreur : public std::exception
 {
 public:
-    erreur(std::string const& phrase="") throw()
+    erreur(int line , std::string file ,std::string const& phrase = "") throw()
         :m_phrase(phrase)
     {
-        m_phrase = "Division par zero  ,  niveau d'erreur : 2  ,  ligne : " + std::to_string(__LINE__) + "  " + std::string(__FILE__);
+        m_phrase = "Division par zero  ,  niveau d'erreur : 2  ,  ligne : " + std::to_string(line) + "  " + file;
     }
     
     const char* what() const throw()
@@ -93,6 +94,19 @@ int main()
     std::cout << resultat6 << std::endl;
     std::cout << resultat7 << std::endl;
     std::cout << resultat8 << std::endl;
+
+    //boucle qui crée trop d'éléments et dont le test arrete le processus pour protéger le programme
+    std::vector<Vector2*> testing;
+    int compteur = 0;
+    std::string tmp = "fuite de memoire potentielle.";
+    while (1)
+    {
+        Vector2* vec = new Vector2();
+        testing.push_back(vec);
+        compteur = testing.size();
+       
+    }
+    assert(testing.size() < 100);
 }
 
 Vector2::Vector2()
@@ -132,7 +146,7 @@ Vector2 Vector2::MultiplyVector2f(Vector2 a, float b)
 Vector2 Vector2::DivideVector2f(Vector2 a, float b)
 {
    if(b == 0)
-       throw erreur("Division par zero");
+       throw erreur(__LINE__, __FILE__, "division par zero" );
     Vector2 divideVector2 = { a.x / b, a.y / b };
     return divideVector2;
 }

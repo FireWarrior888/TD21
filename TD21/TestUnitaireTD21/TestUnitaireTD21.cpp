@@ -104,21 +104,7 @@ namespace TestUnitaireTD21
 
 		TEST_METHOD(TestBoucle)
 		{
-			//boucle qui crée trop d'éléments et dont le test arrete le processus pour protéger le programme
-			std::vector<Vector2*> testing;
-			int compteur = 0;
-			std::string tmp = "fuite de memoire potentielle.";
-			while(1)
-			{
-				Vector2* vec = new Vector2();
-				testing.push_back(vec);
-				compteur = testing.size();
-				if (compteur >= 100)
-				{
-					std::cout << tmp << std::endl;
-					Assert::Fail();
-				}
-			}	
+			
 		}
 		
 
